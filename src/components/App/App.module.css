@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #5F0A87;
+    font-family: sans-serif;
+}
+
+h1 {
+    display: flex;
+    margin: auto;
+    top: 0;
+    padding: 1%;
+    width: 100%;
+    background-color: #2F004F;
+    text-align: center;
+    color: white;
+}

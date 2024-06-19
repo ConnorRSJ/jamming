@@ -1,0 +1,25 @@
+.searchBar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: solid red;
+}
+
+input {
+    margin: 25px auto;
+    text-align: center;
+    background-color: white;
+    padding: 1%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+
+button {
+    margin: 25px auto;
+    padding: 1% 5%;
+    background-color: #7635df;
+    border-radius: 25rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+}

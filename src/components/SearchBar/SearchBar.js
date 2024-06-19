@@ -1,22 +1,21 @@
 import React, {useState} from "react";
+import styles from "./SearchBar.module.css"
 
 function SearchBar() {
     const [textValue, setTextValue] = useState('');
 
 
     return (
-        <>
-            <p>{textValue}</p>
+        <div className={styles.searchBar}>
             <input 
-                id='textValue'
-                name='textValue'
-                type='text'
+                id="textValue"
+                name="textValue"
+                type="text"
                 value={textValue}
                 onChange={(e) => setTextValue(e.target.value)}
             />
-            <br />
             <button type='submit'>Search</button>
-        </>
+        </div>
     );
 }
 
