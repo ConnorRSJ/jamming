@@ -1,15 +1,22 @@
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
-import styles from "./App.module.css"
-
+import Playlist from "../Playlist/Playlist"
 
 function App() {
     return (
-        <>
-            <h1>JAMMING</h1>
-            <SearchBar />
-            <SearchResults />
-        </>
+        <div>
+            <h1>
+                Ja<span className="highlight">mmm</span>ing
+            </h1>
+            <div className="App">
+                <SearchBar/>
+
+                <div className="App-playlist">
+                    <SearchResults/>
+                    <Playlist/>
+                </div>
+            </div>
+        </div>
     );
 }
 
