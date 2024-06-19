@@ -1,17 +1,18 @@
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist"
+import styles from "./App.module.css";
 
 function App() {
     return (
         <div>
             <h1>
-                Ja<span className="highlight">mmm</span>ing
+                Ja<span className={styles.highlight}>mmm</span>ing
             </h1>
-            <div className="App">
+            <div className={styles.App}>
                 <SearchBar/>
 
-                <div className="App-playlist">
+                <div className={styles.AppPlaylist}>
                     <SearchResults/>
                     <Playlist/>
                 </div>
