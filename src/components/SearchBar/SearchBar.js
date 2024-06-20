@@ -6,15 +6,16 @@ function SearchBar() {
 
 
     return (
-        <div className={styles.searchBar}>
-            <input 
+        <div className={styles.SearchBar}>
+            <input
+                placeholder="Enter A Song, Album, or Artist"
                 id="textValue"
                 name="textValue"
                 type="text"
                 value={textValue}
                 onChange={(e) => setTextValue(e.target.value)}
             />
-            <button type='submit'>Search</button>
+            <button className={styles.SearchButton} type='submit'>SEARCH</button>
         </div>
     );
 }

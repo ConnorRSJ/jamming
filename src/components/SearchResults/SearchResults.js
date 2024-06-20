@@ -1,17 +1,13 @@
-import React, { useState } from "react";
-
+import React from "react";
+import Tracklist from "../Tracklist/Tracklist"
 
 function SearchResults() {
-    const [searchResults, setSearchResults] = useState([])
 
 
     return (
-        <>
-            <h1>Results</h1>
-            <ul>
-                <li>u</li>
-            </ul>
-        </>
+        <div className="SearchResults">
+            <Tracklist/>
+        </div>
     );
 }
 
