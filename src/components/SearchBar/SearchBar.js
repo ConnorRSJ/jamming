@@ -15,7 +15,7 @@ function SearchBar() {
                 value={textValue}
                 onChange={(e) => setTextValue(e.target.value)}
             />
-            <button className={styles.SearchButton} type='submit'>SEARCH</button>
+            <button className={styles.SearchButton}>SEARCH</button>
         </div>
     );
 }
