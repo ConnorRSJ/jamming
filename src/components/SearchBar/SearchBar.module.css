@@ -11,14 +11,21 @@
     border: 1px solid #FFF;
     border-radius: 3px;
     margin-bottom: 2.22rem;
-    color: transparent;
-    text-shadow: 0 0 0 #010C3F;
     text-align: center;
     font-size: 1rem;
 }
 
 .SearchBar input:focus {
     outline: none;
+    &::placeholder {
+        color: #FFF;
+    }
+}
+
+.SearchBar input::placeholder {
+    &:focus {
+        color: #FFF;
+    }
 }
 
 .SearchButton {
