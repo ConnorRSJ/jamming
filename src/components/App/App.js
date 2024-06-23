@@ -17,6 +17,34 @@ function App() {
         album: "example album 2",
         id: 2
     }]);
+    const [playlistName, setPlaylistName] = useState("Example Playlist Name");
+    const [playlistTracks, setPlaylistTracks] = useState([{   
+        name: "example playlist name 1",
+        artist: "example playlist artist 1",
+        album: "example playlist album 1",
+        id: 11
+    },
+    {
+        name: "example playlist name 2",
+        artist: "example playlist artist 2",
+        album: "example playlist album 2",
+        id: 22
+    }]);
+
+    function addTrack(track) {
+        const existingTrack = playlistTracks.find(t => t.id === track.id);
+        const newTrack = playlistTracks.concat(track);
+        if (existingTrack) {
+            console.log("Track already exists");
+        } else {
+            setPlaylistTracks(newTrack)
+        }
+    }
+
+    function removeTrack(track) {
+        const existingTrack = playlistTracks.filter(t => t.id !== track.id);
+        setPlaylistTracks(existingTrack);
+    }
 
     return (
         <div>
@@ -27,8 +55,15 @@ function App() {
                 <SearchBar/>
 
                 <div className={styles.AppPlaylist}>
-                    <SearchResults userSearchResults={searchResults} />
-                    <Playlist/>
+                    <SearchResults
+                        userSearchResults={searchResults}
+                        onAdd={addTrack}
+                    />
+                    <Playlist
+                        playlistName={playlistName}
+                        playlistTracks={playlistTracks}
+                        onRemove={removeTrack}
+                    />
                 </div>
             </div>
         </div>
