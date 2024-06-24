@@ -3,11 +3,17 @@ import Tracklist from "../Tracklist/Tracklist";
 import styles from "./Playlist.module.css";
 
 function Playlist(props) {
+    function handleNameChange({target}) {
+        props.onNameChange(target.value);
+    }
+
     return (
         <div className={styles.Playlist}>
             <input
                 type="text"
-                defaultValue={props.playlistName} />
+                defaultValue={props.playlistName}
+                onChange={handleNameChange}
+            />
             <Tracklist
                 userSearchResults={props.playlistTracks}
                 isRemoval={true}
