@@ -6,31 +6,9 @@ import styles from "./App.module.css";
 import { Spotify } from "../../util/Spotify/Spotify";
 
 function App() {
-    const [searchResults, setSearchResults] = useState([{   
-        name: "example name 1",
-        artist: "example artist 1",
-        album: "example album 1",
-        id: 1
-    },
-    {
-        name: "example name 2",
-        artist: "example artist 2",
-        album: "example album 2",
-        id: 2
-    }]);
-    const [playlistName, setPlaylistName] = useState("Example Playlist Name");
-    const [playlistTracks, setPlaylistTracks] = useState([{   
-        name: "example playlist name 1",
-        artist: "example playlist artist 1",
-        album: "example playlist album 1",
-        id: 11
-    },
-    {
-        name: "example playlist name 2",
-        artist: "example playlist artist 2",
-        album: "example playlist album 2",
-        id: 22
-    }]);
+    const [searchResults, setSearchResults] = useState([]);
+    const [playlistName, setPlaylistName] = useState("New Playlist");
+    const [playlistTracks, setPlaylistTracks] = useState([]);
 
     function addTrack(track) {
         const existingTrack = playlistTracks.find(t => t.id === track.id);
@@ -53,6 +31,10 @@ function App() {
 
     function savePlaylist() {
         const trackURIs = playlistTracks.map(t => t.uri);
+        Spotify.savePlaylist(playlistName, trackURIs).then(() => {
+            setPlaylistName("New Playlist");
+            setPlaylistTracks([]);
+        })
     }
 
     function search(term) {
