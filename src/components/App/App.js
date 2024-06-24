@@ -54,13 +54,17 @@ function App() {
         const trackURIs = playlistTracks.map(t => t.uri);
     }
 
+    function search(search) {
+        console.log(search);
+    }
+
     return (
         <div>
             <h1>
                 Ja<span className={styles.highlight}>mmm</span>ing
             </h1>
             <div className={styles.App}>
-                <SearchBar/>
+                <SearchBar onSearch={search}/>
 
                 <div className={styles.AppPlaylist}>
                     <SearchResults

@@ -1,9 +1,16 @@
 import React, {useState} from "react";
 import styles from "./SearchBar.module.css"
 
-function SearchBar() {
-    const [textValue, setTextValue] = useState('');
+function SearchBar(props) {
+    const [term, setTerm] = useState('');
 
+    function passTerm() {
+        props.onSearch(term);
+    }
+
+    function handleTermChange({target}) {
+        setTerm(target.value);
+    }
 
     return (
         <div className={styles.SearchBar}>
@@ -13,9 +20,9 @@ function SearchBar() {
                 name="textValue"
                 type="text"
                 value={textValue}
-                onChange={(e) => setTextValue(e.target.value)}
+                onChange={handleTermChange}
             />
-            <button className={styles.SearchButton}>SEARCH</button>
+            <button className={styles.SearchButton} onClick={passTerm}>SEARCH</button>
         </div>
     );
 }
